@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<br/>
+<center>
+	Lab:Stock 自訂驗証 Spring Validator
+</center>

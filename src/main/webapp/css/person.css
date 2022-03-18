@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.personbody{
+	padding: 15px;
+}
+
+.persontable{
+	width:100%;
+	border:0p;
+}
+
+.errorMsg{
+	color: #FF0000;
+	font-size: 30px;
+}

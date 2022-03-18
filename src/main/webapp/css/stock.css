@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.stockbody{
+	padding: 15px;
+}
+
+.stocktable{
+	width:100%;
+	border:0p;
+}
+
+.errorMsg{
+	color: #FF0000;
+	font-size: 30px;
+}
+
+.errorInfo{
+	color: #005100;
+	font-size: 40px;
+}

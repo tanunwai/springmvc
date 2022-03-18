@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page isErrorPage="true" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="spform" uri="http://www.springframework.org/tags/form" %>
+
+<spform:form class="pure-form" method="post" modelAttribute="fundstock" action="${pageContext.request.contextPath}/mvc/lab/fundstock/">
+    <fieldset>
+        <legend>Fundstock Form&nbsp; | &nbsp;
+				<a href="${pageContext.request.contextPath}/html/fund.html">Fund Form</a>        
+        </legend>
+        <input type="hidden" id="_method" name="_method" value="${ _method }">
+        	序號 :<spform:input path="sid"/>
+        			<spform:errors path="sid" class="errorMsg"/><p/>        	
+   			代號 :<spform:input path="symbol"/>
+   					<spform:errors path="symbol" class="errorMsg"/><p/>
+        	數量 :<spform:input path="share"/>
+        			<spform:errors path="share" class="errorMsg"/><p/>
+   			基金 :<spform:select path="fid">
+   					<spform:option value="">請選擇</spform:option>
+        				<spform:options items="${funds}" itemValue="fid" itemLabel="fname"/>
+        					</spform:select>
+        						<spform:errors path="fid" class="errorMsg"/><p/>
+        <button type="submit" class="pure-button pure-button-primary" ${_method=="POST"?'':'disabled'}>新增</button>
+        <button type="submit" class="pure-button pure-button-primary" ${_method=="PUT"?'':'disabled'} onclick="updateFundstock(${sid})">修改</button>
+        <button type="submit" class="pure-button pure-button-primary" ${_method=="PUT"?'':'disabled'} onclick="deleteFundstock(${sid})">刪除</button>
+        <button type="reset" class="pure-button pure-button-primary" onclick="resetFundstock()" id="fundstockForm">重置</button>        
+        <br/>
+        <spform:errors path="*" class="errorInfo"/>
+    </fieldset>
+</spform:form>
